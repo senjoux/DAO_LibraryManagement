@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3 mars 2015 00:03:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ham.entities.Reserver" table="reserver">
+        <id name="id_reservation" type="int">
+            <column name="ID_RESERVATION" />
+            <generator class="native" />
+        </id>
+        <property name="date_reservation" type="java.util.Date">
+            <column name="DATE_RESERVATION" />
+        </property>
+        <many-to-one name="lecteur" class="com.ham.entities.Lecteur" fetch="join">
+            <column name="LECTEUR" />
+        </many-to-one>
+        <many-to-one name="livre" class="com.ham.entities.Livre" fetch="join">
+            <column name="LIVRE" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

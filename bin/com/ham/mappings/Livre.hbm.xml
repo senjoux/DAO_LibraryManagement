@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3 mars 2015 00:03:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ham.entities.Livre" table="livre">
+        <id name="idLivre" type="int">
+            <column name="IDLIVRE" />
+            <generator class="native" />
+        </id>
+        <property name="titre" type="java.lang.String">
+            <column name="TITRE" />
+        </property>
+        <property name="nbr_exemplaires" type="int">
+            <column name="NBR_EXEMPLAIRES" />
+        </property>
+       
+        <set name="set_exemplaires" table="EXAMPLAIRE" inverse="false" lazy="true">
+            <key>
+                <column name="IDLIVRE" />
+            </key>
+            <one-to-many class="com.ham.entities.Examplaire" />
+        </set>
+        
+        <set name="set_l_themes" cascade="save-update" table="livre_theme"  >
+            <key>
+                <column name="IDLIVRE" />
+            </key>
+            <many-to-many column="IDTHEME" class="com.ham.entities.Theme" />
+        </set>
+    </class>
+</hibernate-mapping>

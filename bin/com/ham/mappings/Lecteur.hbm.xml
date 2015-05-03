@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3 mars 2015 00:03:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ham.entities.Lecteur" table="lecteur">
+        <id name="idLecteur" type="int" access="field">
+            <column name="IDLECTEUR" />
+            <generator class="native" />
+        </id>
+        <property name="nom" type="java.lang.String">
+            <column name="NOM" />
+        </property>
+        <property name="prenom" type="java.lang.String">
+            <column name="PRENOM" />
+        </property>
+        <property name="mail" type="java.lang.String">
+            <column name="MAIL" />
+        </property>
+        <property name="adresse" type="java.lang.String">
+            <column name="ADRESSE" />
+        </property>
+        <property name="telephone" type="java.lang.String">
+            <column name="TELEPHONE" />
+        </property>
+        <property name="date_inscription" type="java.util.Date">
+            <column name="DATE_INSCRIPTION" />
+        </property>
+        <property name="sanction" type="boolean">
+            <column name="SANCTION" />
+        </property>
+    </class>
+</hibernate-mapping>

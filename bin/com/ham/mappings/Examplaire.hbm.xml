@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3 mars 2015 00:03:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ham.entities.Examplaire" table="examplaire">
+        <id name="idExamplaire" type="int" access="field">
+            <column name="IDEXAMPLAIRE" />
+            <generator class="native" />
+        </id>
+        <property name="disponible" type="boolean">
+            <column name="DISPONIBLE" />
+        </property>
+        <property name="etat" type="java.lang.String">
+            <column name="ETAT" />
+        </property>
+        <property name="date_achat" type="java.util.Date">
+            <column name="DATE_ACHAT" />
+        </property>
+    </class>
+</hibernate-mapping>

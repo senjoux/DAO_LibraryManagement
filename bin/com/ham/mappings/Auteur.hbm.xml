@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3 mars 2015 00:03:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class name="com.ham.entities.Auteur" table="auteur">
+  <id access="field" name="idAuteur" type="int">
+   <column name="IDAUTEUR"/>
+   <generator class="native"/>
+  </id>
+  <property generated="never" lazy="false" name="nom" type="java.lang.String">
+   <column name="NOM"/>
+  </property>
+  <property generated="never" lazy="false" name="prenom" type="java.lang.String">
+   <column name="PRENOM"/>
+  </property>
+  
+  <many-to-one class="com.ham.entities.Pays" fetch="join" name="pays">
+   <column name="PAYS"/>
+  </many-to-one>
+  
+  <set access="field" lazy="false" fetch="join" name="set_a_livres" cascade="all" sort="unsorted" table="LIVRE">
+   <key>
+    <column name="IDAUTEUR"/>
+   </key>
+   <one-to-many class="com.ham.entities.Livre"/>
+  </set>
+ </class>
+</hibernate-mapping>

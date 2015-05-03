@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 3 mars 2015 00:03:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ham.entities.Pays" table="pays">
+        <id name="code" type="java.lang.String">
+            <column name="CODE" />
+            <generator class="assigned" />
+        </id>
+        <property name="nom" type="java.lang.String">
+            <column name="NOM" />
+        </property>
+        <property name="nom_complet" type="java.lang.String">
+            <column name="NOM_COMPLET" />
+        </property>
+        <property name="iso" type="java.lang.String">
+            <column name="ISO" />
+        </property>
+        <property name="numero" type="int">
+            <column name="NUMERO" />
+        </property>
+    </class>
+</hibernate-mapping>
